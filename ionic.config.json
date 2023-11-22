@@ -1,0 +1,7 @@
+{
+  "name": "PrisPumpen",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
