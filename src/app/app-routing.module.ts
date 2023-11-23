@@ -10,7 +10,15 @@ const routes: Routes = [
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
+  },  {
+    path: 'login',
+    loadChildren: () => import('./login/login.module').then( m => m.LoginPageModule)
   },
+  {
+    path: 'forside',
+    loadChildren: () => import('./forside/forside.module').then( m => m.ForsidePageModule)
+  },
+
 ];
 
 @NgModule({
