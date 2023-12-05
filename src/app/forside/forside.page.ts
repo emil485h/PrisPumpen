@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+// import { PrisService } from '../services/pris.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-forside',
@@ -8,11 +10,14 @@ import { Router } from '@angular/router';
  
 })
 export class ForsidePage implements OnInit {
-  selectedSegment: string = 'default';
-
-  constructor(private router: Router) { }
+  selectedSegment: string = 'benzin';
+  priser: Observable<any>;
+// private prisService: PrisService,
+  constructor( private router: Router) { }
 
   ngOnInit() {
+    // const tankstationId = 'DIN_TANKSTATION_ID';
+    // this.priser = this.prisService.getPriser(tankstationId);
   }
 
   navigateToKamera() {
