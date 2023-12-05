@@ -5,8 +5,10 @@ import { Router } from '@angular/router';
   selector: 'app-forside',
   templateUrl: './forside.page.html',
   styleUrls: ['./forside.page.scss'],
+ 
 })
 export class ForsidePage implements OnInit {
+  selectedSegment: string = 'default';
 
   constructor(private router: Router) { }
 
@@ -16,5 +18,12 @@ export class ForsidePage implements OnInit {
   navigateToKamera() {
     this.router.navigate(['/kamera']);
   }
+
+ segmentChanged(event) {
+    this.selectedSegment = event.detail.value;
+  }
+  
+
+  
 
 }

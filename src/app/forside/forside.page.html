@@ -1,6 +1,9 @@
 <ion-header [translucent]="true">
   <ion-toolbar color="none">
-    <ion-searchbar color="primary" class="searchbar" placeholder="Søg tankstationer"></ion-searchbar>
+    <ion-buttons class="navigate-icon" size="large" slot="end">
+      <ion-icon name="navigate-outline"></ion-icon>
+    </ion-buttons>
+    <ion-searchbar showCancelButton="never" color="primary" class="searchbar" placeholder="Søg tankstationer"></ion-searchbar>
   </ion-toolbar>
 </ion-header>
 
@@ -10,35 +13,54 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-segment id="selection" value="default" swipeGesture="True">
-    <ion-segment-button value="default">
-      <ion-label>Benzin</ion-label>
+  <ion-segment class="round-segment" value="default" swipeGesture="True">
+    <ion-segment-button class="round-segment-button" value="default">
+      Benzin
     </ion-segment-button>
     <ion-segment-button value="segment">
-      <ion-label>Diesel</ion-label>
+      Diesel
     </ion-segment-button>
   </ion-segment>
   
   
     
+  <ion-item *ngIf="selectedSegment === 'benzin'">
+    <label for="shell-logo" class="">
+      <img src="../../assets/icon/Shell.png">
+    </label>
+    <p>95= </p>
+    <p>100=</p>
+  </ion-item>
+  
+  <ion-item *ngIf="selectedSegment === 'diesel'">
+    <label for="shell-logo" class="">
+      <img src="../../assets/icon/Shell.png">
+    </label>
+    <p>D= </p>
+  </ion-item>
+
   <ion-item>
-    <label for="">
-      Logo
+    <label for="f24-logo" class="f24">
+      <img src="../../assets/icon/F24.png">
+    </label>
+  </ion-item>
+  <ion-item >
+    
+    <label for="shell-logo" class="">
+      <img src="../../assets/icon/Shell.png">
+    </label>
+    <p>95= </p>
+    <p>100=</p>
+
+  </ion-item>
+  <ion-item>
+    <label for="circle-k-logo">
+      <img src="../../assets/icon/CircleK.png">
     </label>
   </ion-item>
   <ion-item>
-    <label for="">
-      Logo
-    </label>
-  </ion-item>
-  <ion-item>
-    <label for="">
-      Logo
-    </label>
-  </ion-item>
-  <ion-item>
-    <label for="">
-      Logo
+    <label for="ingo-logo">
+      <img src="../../assets/icon/Ingo.png">
     </label>
   </ion-item>
 </ion-content>
