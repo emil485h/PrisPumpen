@@ -24,3 +24,82 @@
 @import "@ionic/angular/css/text-alignment.css";
 @import "@ionic/angular/css/text-transformation.css";
 @import "@ionic/angular/css/flex-utils.css";
+
+
+.searchbar-input.sc-ion-searchbar-md {
+    background-position: left 8px center;
+    height: auto;
+    font-size: 1.1rem;
+    font-weight: 400;
+    color: #fff;
+    background-color: #c392f4;
+  }
+
+  ion-searchbar {
+    margin-top: 24px;
+}
+
+ion-searchbar ion-icon {
+  margin-left: 10% !important;
+}
+
+  .searchbar-input.sc-ion-searchbar-ios{
+      border-radius: 20px;
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+  }
+  .searchbar-input.sc-ion-searchbar-md{
+      border-radius: 20px;
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+  }
+
+ .navigate-icon{
+  position: absolute !important;
+  margin-top: 24px;
+  right: 17%;
+  font-size: 24px;
+ }
+
+  ion-item{
+    width: 90%;
+    margin: auto;
+    color: #000;
+    margin-bottom: 4px;
+    border-radius: 20px;
+    justify-content: space-evenly;
+  }
+
+  ion-item label{
+    padding-top: 2px;
+    max-width: 35px;
+  }
+
+ion-item p{
+  margin-left: 55px;
+}
+  .f24{
+    max-width: 42px;
+  }
+
+  
+
+.round-segment{
+  width: 50%;
+  margin: auto;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+ion-segment{
+  background-color: #fff;
+  color: #000;
+}
+
+ion-segment-button::part(indicator-background){
+  border-radius: 20px;
+}

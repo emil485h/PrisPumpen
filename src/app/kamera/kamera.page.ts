@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { PhotoService, UserPhoto } from '../services/photo.service';
 import { ActionSheetController } from '@ionic/angular';
+import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-kamera',
@@ -10,7 +12,8 @@ import { ActionSheetController } from '@ionic/angular';
 export class KameraPage implements OnInit {
 
   constructor(public photoService: PhotoService,
-              public actionSheetController: ActionSheetController) { }
+              public actionSheetController: ActionSheetController,
+              private router: Router) { }
               
               public async showActionSheet(photo: UserPhoto, position: number) {
                 const actionSheet = await this.actionSheetController.create({
@@ -42,4 +45,9 @@ addPhotoToGallery() {
     await this.photoService.loadSaved();
   }
 
+  goBack() {
+    this.router.navigate(['/forside']);
+  }
+
 }
+
