@@ -3,8 +3,20 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+firebase: {
+  apiKey: "AIzaSyC9cECVhuPBWCNjUWfVM21AFxBIhVgd8cU",
+  authDomain: "prispumpen-f2e82.firebaseapp.com",
+  databaseURL: "https://prispumpen-f2e82-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "prispumpen-f2e82",
+  storageBucket: "prispumpen-f2e82.appspot.com",
+  messagingSenderId: "547779728309",
+  appId: "1:547779728309:web:d071f14171a0be2f203ffc",
+  measurementId: "G-JFGJ8NHW3P"
+}
 };
+
+
 
 /*
  * For easier debugging in development mode, you can import the following file
