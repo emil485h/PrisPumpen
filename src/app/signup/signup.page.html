@@ -1,7 +1,7 @@
 <ion-content [fullscreen]="true">
   <div class="header">
-    <h1 class="title">Velkommen tilbage</h1>
-    <p class="subTitle">Log ind på din konto</p>
+    <h1 class="title">Velkommen</h1>
+    <p class="subTitle">Opret din konto</p>
   </div>
 
   <form>
@@ -12,13 +12,14 @@
       </ion-item>
       <ion-item>
         <ion-input placeholder="Email" class="input"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+      <ion-item>
+        <ion-input placeholder="Kodeord" class="input"></ion-input>
         <ion-icon name="lock-closed-outline"></ion-icon>
       </ion-item>
-      <div class="forgotpassword">
-      <a [routerLink]="['/resetpassword']">Glemt Kodeord?</a>
-      </div>
       <div class="signuplink">
-        <p>Ny Bruger ? <a [routerLink]="['/signup']" >Tilmeld Her</a></p>
+        <p>Alerde Bruger ? <a [routerLink]="['/login']" >Log ind</a></p>
       </div>
     </div>
     <ion-fab vertical="bottom" horizontal="end" style="margin-bottom: 30px;">

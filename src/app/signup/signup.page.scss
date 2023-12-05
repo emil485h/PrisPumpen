@@ -3,7 +3,7 @@
 }
 
 ion-item{
-    margin-top: 16px;
+    margin-top: 16;
 }
 .header{
     margin-top: 100px;
@@ -33,17 +33,6 @@ ion-item{
         font-size: 0.9rem;
     }
     a{
-        text-decoration: none;
-    }
-}
-
-.forgotpassword{
-    display: flex;
-    
-    justify-content: flex-end;
-    a{
-        font-weight: 400;
-        font-size: 0.8rem;
         text-decoration: none;
     }
 }
