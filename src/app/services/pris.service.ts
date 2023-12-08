@@ -1,23 +1,83 @@
-// import { Injectable } from '@angular/core';
-// import { HttpClient } from '@angular/common/http';
-// import { Observable } from 'rxjs';
+// firebase.service.ts
+import { Injectable } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { Observable } from 'rxjs';
 
-// @Injectable({
-//   providedIn: 'root',
-// })
-// // export class PrisService {
-// //   private apiUrl = 'DIN_API_URL';
+@Injectable({
+  providedIn: 'root',
+})
+export class FirebaseService {
+  constructor(private firestore: AngularFirestore) {}
 
-// //   constructor(private http: HttpClient) {}
+  getCollectionData(collectionName: string) {
+    return this.firestore.collection(collectionName).valueChanges();
+  }
+// Ok tankstation
+  get95ValueFromOKDocument(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('OK').valueChanges();
+  }
+  get100ValueFromOKDocument(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('OK').valueChanges();
+  }
+  getDieselValueFromOKDocument(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('OK').valueChanges();
+  }
 
-// //   getPriser(tankstationId: string): Observable<any> {
-// //     return this.http.get(`${this.apiUrl}/priser/${tankstationId}`);
-// //   }
+//   Q8 tankstation
+get95Q8ValueFromQ8Document(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('Q8').valueChanges();
+  }
+  get95EkstraValueFromQ8Document(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('Q8').valueChanges();
+  }
+  getDieselQ8ValueFromQ8Document(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('Q8').valueChanges();
+  }
 
-// export class PrisService {
-//   constructor(private db: AngularFireDatabase) {}
 
-//   getPriser(tankstationId: string): Observable<any> {
-//     return this.db.object(`/priser/${tankstationId}`).valueChanges();
-//   }
-// }
+
+get95CircleKValueFromCircleKDocument(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('CircleK').valueChanges();
+  }
+  get95PlusValueFromCircleKDocument(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('CircleK').valueChanges();
+  }
+  getDieselCircleKValueFromCircleKDocument(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('CircleK').valueChanges();
+  }
+
+
+get95F24ValueFromF24Document(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('F24').valueChanges();
+  }
+  get95PlusF24ValueFromF24Document(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('F24').valueChanges();
+  }
+  getDieselF24ValueFromF24Document(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('F24').valueChanges();
+  }
+
+
+
+get95ShellValueFromF24Document(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('Shell').valueChanges();
+  }
+  get99ValueFromF24Document(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('Shell').valueChanges();
+  }
+  getDieselShellValueFromF24Document(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('Shell').valueChanges();
+  }
+
+
+get95IngoValueFromIngoDocument(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('Ingo').valueChanges();
+  }
+  get98ValueFromIngoDocument(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('Ingo').valueChanges();
+  }
+  getDieselIngoValueFromIngoDocument(): Observable<any> {
+    return this.firestore.collection('TankStationer').doc('Ingo').valueChanges();
+  }
+  // Andre Firestore-operationer...
+}
