@@ -22,30 +22,49 @@
     </ion-segment-button>
   </ion-segment>
 
+
+  <!-- Ok -->
+
   <ion-item *ngIf="selectedSegment === 'benzin'">
     <!-- Benzin-relateret indhold -->
     <label for="ok_logo">
       <img src="../../assets/icon/OK.png">
       
     </label>
-    <p>95 = 13.19{{ (priser | async)?.pris95}} </p>
-      <p>Oktan100 = 14.48{{ (priser | async)?.pris100}} </p>
-  </ion-item>
+
+    <ng-container *ngIf="value95OK !== undefined">
+    <p>95 ={{ value95OK }} </p>
+  </ng-container>
+  <ng-container *ngIf="value100 !== undefined">
+      <p>Oktan100 ={{ value100 }} </p>
+    </ng-container>
+    </ion-item>
 
   <ion-item *ngIf="selectedSegment === 'diesel'">
     <!-- Diesel-relateret indhold -->
     <label for="OK_logo">
       <img src="../../assets/icon/OK.png">
     </label>
-    <p>Diesel = 12.29 </p>
+    <ng-container *ngIf="valueDieselOK !==undefined">
+    <p>Diesel = {{ valueDieselOK }} </p>
+  </ng-container>
   </ion-item>
+
+
+
+  <!-- Q8 -->
+
   <ion-item *ngIf="selectedSegment === 'benzin'">
     <!-- Benzin-relateret indhold -->
     <label for="q8_logo">
       <img src="../../assets/icon/Q8.png">
     </label>
-    <p>95 = 13.29</p>
-      <p>95 Extra = 14.29</p>
+    <ng-container *ngIf="value95Q8 !== undefined">
+      <p>95 ={{ value95Q8 }} </p>
+    </ng-container>
+    <ng-container *ngIf="value95Ekstra !== undefined">
+        <p>95 ekstra ={{ value95Ekstra }} </p>
+      </ng-container>
   </ion-item>
 
   <ion-item *ngIf="selectedSegment === 'diesel'">
@@ -53,15 +72,26 @@
     <label for="Q8-Logo">
       <img src="../../assets/icon/Q8.png">
     </label>
-    <p>Diesel = 13.09</p>
+    <ng-container *ngIf="valueDieselQ8 !== undefined">
+      <p>Diesel = {{ valueDieselQ8 }} </p>
+    </ng-container>
   </ion-item>
+
+
+
+  <!-- Circle-K -->
+
   <ion-item *ngIf="selectedSegment === 'benzin'">
     <!-- Benzin-relateret indhold -->
     <label for="Circle-k_logo">
       <img src="../../assets/icon/CircleK.png">
     </label>
-    <p>95 = 13.29</p>
-      <p>95 Plus = 13.99</p>
+    <ng-container *ngIf="value95CircleK !== undefined">
+      <p>95 ={{ value95CircleK }} </p>
+    </ng-container>
+    <ng-container *ngIf="value95Plus !== undefined">
+        <p>95 Plus ={{ value95Plus }} </p>
+      </ng-container>
   </ion-item>
 
   <ion-item *ngIf="selectedSegment === 'diesel'">
@@ -69,15 +99,26 @@
     <label for="Circle-k_logo">
       <img src="../../assets/icon/CircleK.png">
     </label>
-    <p>Diesel = 12.39</p>
+    <ng-container *ngIf="valueDieselCircleK !== undefined">
+      <p>Diesel = {{ valueDieselCircleK }} </p>
+    </ng-container>
   </ion-item>
+
+
+
+   <!-- f24 -->
+
   <ion-item *ngIf="selectedSegment === 'benzin'">
     <!-- Benzin-relateret indhold -->
     <label for="f24_logo">
       <img src="../../assets/icon/F24.png">
     </label>
-    <p>95 = 13.19</p>
-      <p>95+ = 14.19</p>
+    <ng-container *ngIf="value95F24 !== undefined">
+      <p>95 ={{ value95F24 }} </p>
+    </ng-container>
+    <ng-container *ngIf="value95PlusF24 !== undefined">
+        <p>95 +={{ value95PlusF24 }} </p>
+      </ng-container>
   </ion-item>
 
   <ion-item *ngIf="selectedSegment === 'diesel'">
@@ -85,31 +126,53 @@
     <label for="f24_logo">
       <img src="../../assets/icon/F24.png">
     </label>
-    <p>Diesel = 12.29</p>
-  </ion-item>
+    <ng-container *ngIf="valueDieselF24 !== undefined">
+      <p>Diesel = {{ valueDieselF24 }} </p>
+    </ng-container>
+  </ion-item> 
+  
+  
+
+  <!-- Shell -->
+
   <ion-item *ngIf="selectedSegment === 'benzin'">
     <!-- Benzin-relateret indhold -->
     <label for="Shell_logo">
       <img src="../../assets/icon/Shell.png">
     </label>
-    <p>95 = </p>
-      <p>99 = </p>
+    <ng-container *ngIf="value95Shell !== undefined">
+      <p>95 ={{ value95Shell }} </p>
+    </ng-container>
+    <ng-container *ngIf="value99 !== undefined">
+        <p>99 ={{ value99 }} </p>
+      </ng-container>
   </ion-item>
-
+ 
   <ion-item *ngIf="selectedSegment === 'diesel'">
     <!-- Diesel-relateret indhold -->
     <label for="Shell">
       <img src="../../assets/icon/Shell.png">
     </label>
-    <p>Diesel= </p>
+    <ng-container *ngIf="valueDieselShell !== undefined">
+      <p>Diesel = {{ valueDieselShell }} </p>
+    </ng-container>
   </ion-item>
+
+
+
+  <!-- Ingo -->
+
   <ion-item *ngIf="selectedSegment === 'benzin'">
     <!-- Benzin-relateret indhold -->
     <label for="ingo_logo">
       <img src="../../assets/icon/Ingo.png">
     </label>
-    <p>95 = 13.19</p>
-      <p>98 = 13.68</p>
+    <ng-container *ngIf="value95Ingo !== undefined">
+      <p>95 ={{ value95Ingo }} </p>
+    </ng-container>
+    <ng-container *ngIf="value98 !== undefined">
+        <p>98 ={{ value98 }} </p>
+      </ng-container>
   </ion-item>
 
   <ion-item *ngIf="selectedSegment === 'diesel'">
@@ -117,7 +180,9 @@
     <label for="ingo">
       <img src="../../assets/icon/Ingo.png">
     </label>
-    <p>Diesel = 12.29</p>
+    <ng-container *ngIf="valueDieselIngo !== undefined">
+      <p>Diesel = {{ valueDieselIngo }} </p>
+    </ng-container>
   </ion-item>
 
   <!-- ... (fortsæt for andre segmenter) ... -->
