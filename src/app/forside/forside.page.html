@@ -33,10 +33,11 @@
     </label>
 
     <ng-container *ngIf="value95OK !== undefined">
-    <p>95 ={{ value95OK }} </p>
+      <p>95 =<br>{{ value95OK }} kr</p>
   </ng-container>
   <ng-container *ngIf="value100 !== undefined">
-      <p>Oktan100 ={{ value100 }} </p>
+    <p>100 =<br> {{ value100 }} kr</p>
+    <ion-button slot="end" (click)="openEditPriceModal()"><ion-icon name="create-outline"></ion-icon></ion-button>
     </ng-container>
     </ion-item>
 
@@ -46,7 +47,8 @@
       <img src="../../assets/icon/OK.png">
     </label>
     <ng-container *ngIf="valueDieselOK !==undefined">
-    <p>Diesel = {{ valueDieselOK }} </p>
+    <p>Diesel =<br> {{ valueDieselOK }} </p>
+    <ion-button slot="end" (click)="openEditPriceModal()"><ion-icon name="create-outline"></ion-icon></ion-button>
   </ng-container>
   </ion-item>
 
@@ -60,10 +62,10 @@
       <img src="../../assets/icon/Q8.png">
     </label>
     <ng-container *ngIf="value95Q8 !== undefined">
-      <p>95 ={{ value95Q8 }} </p>
+      <p>95 =<br>{{ value95Q8 }} </p>
     </ng-container>
     <ng-container *ngIf="value95Ekstra !== undefined">
-        <p>95 ekstra ={{ value95Ekstra }} </p>
+        <p>95 ekstra =<br>{{ value95Ekstra }} </p>
       </ng-container>
   </ion-item>
 
@@ -73,7 +75,7 @@
       <img src="../../assets/icon/Q8.png">
     </label>
     <ng-container *ngIf="valueDieselQ8 !== undefined">
-      <p>Diesel = {{ valueDieselQ8 }} </p>
+      <p>Diesel =<br> {{ valueDieselQ8 }} </p>
     </ng-container>
   </ion-item>
 
@@ -87,10 +89,10 @@
       <img src="../../assets/icon/CircleK.png">
     </label>
     <ng-container *ngIf="value95CircleK !== undefined">
-      <p>95 ={{ value95CircleK }} </p>
+      <p>95 =<br>{{ value95CircleK }} </p>
     </ng-container>
     <ng-container *ngIf="value95Plus !== undefined">
-        <p>95 Plus ={{ value95Plus }} </p>
+        <p>95 Plus =<br>{{ value95Plus }} </p>
       </ng-container>
   </ion-item>
 
@@ -100,7 +102,7 @@
       <img src="../../assets/icon/CircleK.png">
     </label>
     <ng-container *ngIf="valueDieselCircleK !== undefined">
-      <p>Diesel = {{ valueDieselCircleK }} </p>
+      <p>Diesel =<br> {{ valueDieselCircleK }} </p>
     </ng-container>
   </ion-item>
 
@@ -114,10 +116,10 @@
       <img src="../../assets/icon/F24.png">
     </label>
     <ng-container *ngIf="value95F24 !== undefined">
-      <p>95 ={{ value95F24 }} </p>
+      <p>95 =<br>{{ value95F24 }} </p>
     </ng-container>
     <ng-container *ngIf="value95PlusF24 !== undefined">
-        <p>95 +={{ value95PlusF24 }} </p>
+        <p>95 +=<br>{{ value95PlusF24 }} </p>
       </ng-container>
   </ion-item>
 
@@ -127,7 +129,7 @@
       <img src="../../assets/icon/F24.png">
     </label>
     <ng-container *ngIf="valueDieselF24 !== undefined">
-      <p>Diesel = {{ valueDieselF24 }} </p>
+      <p>Diesel =<br> {{ valueDieselF24 }} </p>
     </ng-container>
   </ion-item> 
   
@@ -141,10 +143,10 @@
       <img src="../../assets/icon/Shell.png">
     </label>
     <ng-container *ngIf="value95Shell !== undefined">
-      <p>95 ={{ value95Shell }} </p>
+      <p>95 =<br>{{ value95Shell }} </p>
     </ng-container>
     <ng-container *ngIf="value99 !== undefined">
-        <p>99 ={{ value99 }} </p>
+        <p>99 =<br>{{ value99 }} </p>
       </ng-container>
   </ion-item>
  
@@ -154,7 +156,7 @@
       <img src="../../assets/icon/Shell.png">
     </label>
     <ng-container *ngIf="valueDieselShell !== undefined">
-      <p>Diesel = {{ valueDieselShell }} </p>
+      <p>Diesel =<br> {{ valueDieselShell }} </p>
     </ng-container>
   </ion-item>
 
@@ -168,10 +170,10 @@
       <img src="../../assets/icon/Ingo.png">
     </label>
     <ng-container *ngIf="value95Ingo !== undefined">
-      <p>95 ={{ value95Ingo }} </p>
+      <p>95 =<br>{{ value95Ingo }} </p>
     </ng-container>
     <ng-container *ngIf="value98 !== undefined">
-        <p>98 ={{ value98 }} </p>
+        <p>98 =<br>{{ value98 }} </p>
       </ng-container>
   </ion-item>
 
@@ -181,7 +183,7 @@
       <img src="../../assets/icon/Ingo.png">
     </label>
     <ng-container *ngIf="valueDieselIngo !== undefined">
-      <p>Diesel = {{ valueDieselIngo }} </p>
+      <p>Diesel =<br> {{ valueDieselIngo }} </p>
     </ng-container>
   </ion-item>
 

@@ -3,6 +3,8 @@ import { Router } from '@angular/router';
 // import { PrisService } from '../services/pris.service';
 import { Observable } from 'rxjs';
 import { FirebaseService } from '../services/pris.service';
+import { ModalController } from '@ionic/angular';
+import { EditPriceModalPage } from '../edit-price-modal/edit-price-modal.page';
 
 @Component({
   selector: 'app-forside',
@@ -14,8 +16,8 @@ export class ForsidePage implements OnInit {
   dataFromFirestore: any[];
   selectedSegment: string = 'benzin';
   priser: Observable<any>;
-  value95OK: any
-  value100: any
+  value95OK: number
+  value100: number
   valueDieselOK: any
 
   value95Q8: any
@@ -42,7 +44,7 @@ export class ForsidePage implements OnInit {
   value98: any
   valueDieselIngo: any
 // private prisService: PrisService,
-  constructor( private router: Router, private firebaseService: FirebaseService) { }
+  constructor( private router: Router, private firebaseService: FirebaseService, private modalController: ModalController,) { }
 
   ngOnInit() {
     this.firebaseService.getCollectionData('TankStationer').subscribe(data =>{
@@ -133,7 +135,55 @@ export class ForsidePage implements OnInit {
     this.selectedSegment = event.detail.value;
   }
   
+  async openEditPriceModal() {
 
+    let componentProps = {};
+
+    if (this.selectedSegment === 'benzin') {
+      componentProps = {
+        'price95': this.value95OK,  // Den nuværende pris for 95 oktan
+        'price100': this.value100 // Den nuværende pris for 100 oktan
+      };
+    } else if (this.selectedSegment === 'diesel') {
+      componentProps = {
+        'priceDiesel': this.valueDieselOK // Den nuværende pris for diesel
+      };
+    }
+  
+    const modal = await this.modalController.create({
+      component: EditPriceModalPage,
+      componentProps: componentProps
+    });
+
+    await modal.present();
+
+    const { data } = await modal.onWillDismiss();
+    if (data) {
+      let priceUpdates = {};
+      if (this.selectedSegment === 'benzin') {
+        priceUpdates = {
+          '95': data.newPrice95,
+          '100': data.newPrice100
+        };
+      } else if (this.selectedSegment === 'diesel') {
+        priceUpdates = {
+          'Diesel': data.newPriceDiesel
+        };
+      }
+  
+      this.firebaseService.updateStationPrices('OK', priceUpdates).then(() => {
+        console.log('Priser opdateret succesfuldt');
+        // Opdater den lokale tilstand med de nye priser
+        if (this.selectedSegment === 'benzin') {
+          this.value95OK = data.newPrice95;
+          this.value100 = data.newPrice100;
+        } else if (this.selectedSegment === 'diesel') {
+          this.valueDieselOK = data.newPriceDiesel;
+        }
+      }).catch(error => {
+        console.error('Fejl ved opdatering af priser', error);
+      });
+  }
   
 
-}
+}}
