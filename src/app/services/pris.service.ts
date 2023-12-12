@@ -80,4 +80,10 @@ get95IngoValueFromIngoDocument(): Observable<any> {
     return this.firestore.collection('TankStationer').doc('Ingo').valueChanges();
   }
   // Andre Firestore-operationer...
+
+  updateStationPrices(stationId: string, priceUpdates: {[fuelType: string]: number}): Promise<void> {
+    // stationId kunne være 'OK', 'Q8', 'CircleK', osv.
+    // priceUpdates er et objekt med brændstoftyper som nøgler og de nye priser som værdier
+    return this.firestore.collection('TankStationer').doc(stationId).update(priceUpdates);
+  }
 }
