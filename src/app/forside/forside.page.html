@@ -13,58 +13,183 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-segment class="round-segment" value="default" swipeGesture="True">
-    <ion-segment-button class="round-segment-button" value="default">
+  <ion-segment [(ngModel)]="selectedSegment" (ionChange)="segmentChanged($event)" class="round-segment" swipeGesture="True">
+    <ion-segment-button class="round-segment-button" value="benzin">
       Benzin
     </ion-segment-button>
-    <ion-segment-button value="segment">
+    <ion-segment-button value="diesel">
       Diesel
     </ion-segment-button>
   </ion-segment>
-  
-  
-    
+
+
+  <!-- Ok -->
+
   <ion-item *ngIf="selectedSegment === 'benzin'">
-    <label for="shell-logo" class="">
-      <img src="../../assets/icon/Shell.png">
+    <!-- Benzin-relateret indhold -->
+    <label for="ok_logo">
+      <img src="../../assets/icon/OK.png">
+      
     </label>
-    <p>95= </p>
-    <p>100=</p>
-  </ion-item>
-  
+
+    <ng-container *ngIf="value95OK !== undefined">
+      <p>95 =<br>{{ value95OK }} kr</p>
+  </ng-container>
+  <ng-container *ngIf="value100 !== undefined">
+    <p>100 =<br> {{ value100 }} kr</p>
+    <ion-button slot="end" (click)="openEditPriceModal()"><ion-icon name="create-outline"></ion-icon></ion-button>
+    </ng-container>
+    </ion-item>
+
   <ion-item *ngIf="selectedSegment === 'diesel'">
-    <label for="shell-logo" class="">
-      <img src="../../assets/icon/Shell.png">
+    <!-- Diesel-relateret indhold -->
+    <label for="OK_logo">
+      <img src="../../assets/icon/OK.png">
     </label>
-    <p>D= </p>
+    <ng-container *ngIf="valueDieselOK !==undefined">
+    <p>Diesel =<br> {{ valueDieselOK }} </p>
+    <ion-button slot="end" (click)="openEditPriceModal()"><ion-icon name="create-outline"></ion-icon></ion-button>
+  </ng-container>
   </ion-item>
 
-  <ion-item>
-    <label for="f24-logo" class="f24">
-      <img src="../../assets/icon/F24.png">
-    </label>
-  </ion-item>
-  <ion-item >
-    
-    <label for="shell-logo" class="">
-      <img src="../../assets/icon/Shell.png">
-    </label>
-    <p>95= </p>
-    <p>100=</p>
 
+
+  <!-- Q8 -->
+
+  <ion-item *ngIf="selectedSegment === 'benzin'">
+    <!-- Benzin-relateret indhold -->
+    <label for="q8_logo">
+      <img src="../../assets/icon/Q8.png">
+    </label>
+    <ng-container *ngIf="value95Q8 !== undefined">
+      <p>95 =<br>{{ value95Q8 }} </p>
+    </ng-container>
+    <ng-container *ngIf="value95Ekstra !== undefined">
+        <p>95 ekstra =<br>{{ value95Ekstra }} </p>
+      </ng-container>
   </ion-item>
-  <ion-item>
-    <label for="circle-k-logo">
+
+  <ion-item *ngIf="selectedSegment === 'diesel'">
+    <!-- Diesel-relateret indhold -->
+    <label for="Q8-Logo">
+      <img src="../../assets/icon/Q8.png">
+    </label>
+    <ng-container *ngIf="valueDieselQ8 !== undefined">
+      <p>Diesel =<br> {{ valueDieselQ8 }} </p>
+    </ng-container>
+  </ion-item>
+
+
+
+  <!-- Circle-K -->
+
+  <ion-item *ngIf="selectedSegment === 'benzin'">
+    <!-- Benzin-relateret indhold -->
+    <label for="Circle-k_logo">
       <img src="../../assets/icon/CircleK.png">
     </label>
+    <ng-container *ngIf="value95CircleK !== undefined">
+      <p>95 =<br>{{ value95CircleK }} </p>
+    </ng-container>
+    <ng-container *ngIf="value95Plus !== undefined">
+        <p>95 Plus =<br>{{ value95Plus }} </p>
+      </ng-container>
   </ion-item>
-  <ion-item>
-    <label for="ingo-logo">
+
+  <ion-item *ngIf="selectedSegment === 'diesel'">
+    <!-- Diesel-relateret indhold -->
+    <label for="Circle-k_logo">
+      <img src="../../assets/icon/CircleK.png">
+    </label>
+    <ng-container *ngIf="valueDieselCircleK !== undefined">
+      <p>Diesel =<br> {{ valueDieselCircleK }} </p>
+    </ng-container>
+  </ion-item>
+
+
+
+   <!-- f24 -->
+
+  <ion-item *ngIf="selectedSegment === 'benzin'">
+    <!-- Benzin-relateret indhold -->
+    <label for="f24_logo">
+      <img src="../../assets/icon/F24.png">
+    </label>
+    <ng-container *ngIf="value95F24 !== undefined">
+      <p>95 =<br>{{ value95F24 }} </p>
+    </ng-container>
+    <ng-container *ngIf="value95PlusF24 !== undefined">
+        <p>95 +=<br>{{ value95PlusF24 }} </p>
+      </ng-container>
+  </ion-item>
+
+  <ion-item *ngIf="selectedSegment === 'diesel'">
+    <!-- Diesel-relateret indhold -->
+    <label for="f24_logo">
+      <img src="../../assets/icon/F24.png">
+    </label>
+    <ng-container *ngIf="valueDieselF24 !== undefined">
+      <p>Diesel =<br> {{ valueDieselF24 }} </p>
+    </ng-container>
+  </ion-item> 
+  
+  
+
+  <!-- Shell -->
+
+  <ion-item *ngIf="selectedSegment === 'benzin'">
+    <!-- Benzin-relateret indhold -->
+    <label for="Shell_logo">
+      <img src="../../assets/icon/Shell.png">
+    </label>
+    <ng-container *ngIf="value95Shell !== undefined">
+      <p>95 =<br>{{ value95Shell }} </p>
+    </ng-container>
+    <ng-container *ngIf="value99 !== undefined">
+        <p>99 =<br>{{ value99 }} </p>
+      </ng-container>
+  </ion-item>
+ 
+  <ion-item *ngIf="selectedSegment === 'diesel'">
+    <!-- Diesel-relateret indhold -->
+    <label for="Shell">
+      <img src="../../assets/icon/Shell.png">
+    </label>
+    <ng-container *ngIf="valueDieselShell !== undefined">
+      <p>Diesel =<br> {{ valueDieselShell }} </p>
+    </ng-container>
+  </ion-item>
+
+
+
+  <!-- Ingo -->
+
+  <ion-item *ngIf="selectedSegment === 'benzin'">
+    <!-- Benzin-relateret indhold -->
+    <label for="ingo_logo">
       <img src="../../assets/icon/Ingo.png">
     </label>
+    <ng-container *ngIf="value95Ingo !== undefined">
+      <p>95 =<br>{{ value95Ingo }} </p>
+    </ng-container>
+    <ng-container *ngIf="value98 !== undefined">
+        <p>98 =<br>{{ value98 }} </p>
+      </ng-container>
   </ion-item>
-</ion-content>
 
+  <ion-item *ngIf="selectedSegment === 'diesel'">
+    <!-- Diesel-relateret indhold -->
+    <label for="ingo">
+      <img src="../../assets/icon/Ingo.png">
+    </label>
+    <ng-container *ngIf="valueDieselIngo !== undefined">
+      <p>Diesel =<br> {{ valueDieselIngo }} </p>
+    </ng-container>
+  </ion-item>
+
+  <!-- ... (fortsæt for andre segmenter) ... -->
+
+</ion-content>
 
 
 

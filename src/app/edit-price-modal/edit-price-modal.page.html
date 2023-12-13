@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Rediger Pris</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-item *ngIf="price95 !== undefined">
+    <ion-label position="floating">95 Oktan Pris</ion-label>
+    <ion-input [(ngModel)]="newPrice95" type="number"></ion-input>
+  </ion-item>
+  <ion-item *ngIf="price100 !== undefined">
+    <ion-label position="floating">100 Oktan Pris</ion-label>
+    <ion-input [(ngModel)]="newPrice100" type="number"></ion-input>
+  </ion-item>
+  <!-- Dieselpris -->
+  <ion-item *ngIf="priceDiesel !== undefined">
+    <ion-label position="floating">Diesel Pris</ion-label>
+    <ion-input [(ngModel)]="newPriceDiesel" type="number"></ion-input>
+  </ion-item>
+  <ion-button expand="full" (click)="save()">Gem</ion-button>
+  <ion-button expand="full" color="medium" (click)="close()">Annuller</ion-button>
+</ion-content>
