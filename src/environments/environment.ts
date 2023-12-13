@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-   firebaseConfig : {
+   firebaseConfig2 : {
     apiKey: "AIzaSyC9cECVhuPBWCNjUWfVM21AFxBIhVgd8cU",
     authDomain: "prispumpen-f2e82.firebaseapp.com",
     projectId: "prispumpen-f2e82",
